@@ -244,14 +244,17 @@ repeat:	current->state = TASK_INTERRUPTIBLE; /*切换到可中断睡眠状态*/
 	{
 		/*原等待队列  第一个进程 唤醒到就绪状态*/
 		fprintk(3,"%d\tJ\t%d\n",tmp->pid,jiffies);
-	}
 		tmp->state=0;
+	}
+		
 }
 
 void wake_up(struct task_struct **p)
 {
 	if (p && *p) {
 		(**p).state=0;
+		/*唤醒到就绪状态*/
+		fprintk(3,"%d\tJ\t%d\n",(*p)->pid,jiffies);
 		*p=NULL;
 	}
 }
