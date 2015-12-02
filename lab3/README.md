@@ -16,4 +16,6 @@
      - 在 copy_process 中输出新建+就绪 log
      - 记录睡眠 sleep_on() interruptible_sleep_on() kernel/sched.c
      - 一系列的记录Log
-+ 编译取出Log分析
+   + 编译取出Log分析
+   + 修改时间片分析Log变化
+
